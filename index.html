@@ -1,146 +1,266 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pinnacle AI Solutions</title>
-  <base href="/PINNACLEAISOLUTIONS/" />
+/**
+ * Pinnacle AI Solutions - Custom Styles
+ * styles.css
+ */
 
-  <!-- Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+/* Base styles & Custom properties (adjust as needed) */
+:root {
+  --primary: #2563eb; /* Blue-600 */
+  --primary-dark: #1d4ed8; /* Blue-700 */
+  --secondary: #3b82f6; /* Blue-500 */
+  --accent: #60a5fa; /* Blue-400 */
+  --gray-dark: #1f2937;
+  --gray-light: #f3f4f6;
+  --text-dark: #111827;
+  --text-light: #f9fafb;
+  --shadow-normal: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 6px 10px rgba(0, 0, 0, 0.15);
+  --transition-normal: all 0.3s ease;
+}
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+html {
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  scroll-padding-top: 90px; /* Account for fixed navbar height */
+}
 
-  <!-- Local CSS -->
-  <link rel="stylesheet" href="pinnacle-ai-solutions.css" />
-</head>
-<body class="font-inter bg-white text-gray-900">
+body {
+  font-family: 'Inter', sans-serif; /* Using Inter as per your HTML */
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  /* Tailwind classes in HTML handle most of the body styles */
+}
 
-  <!-- Preloader -->
-  <div class="preloader fixed inset-0 flex items-center justify-center bg-white z-50">
-    <div class="loader border-4 border-blue-500 rounded-full w-12 h-12 animate-spin"></div>
-  </div>
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-  <!-- Navbar -->
-  <nav class="navbar fixed top-0 left-0 w-full z-40 bg-white shadow-md py-4">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold">
-        <span class="gradient-text text-blue-600">Pinnacle AI</span><br>
-        <span class="text-sm text-gray-400 uppercase tracking-wide">Solutions</span>
-      </a>
+/* Custom Scrollbar (Optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-      <ul class="hidden md:flex space-x-6">
-        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
-        <li><a href="#services" class="hover:text-blue-500">Services</a></li>
-        <li><a href="#ai-solutions" class="hover:text-blue-500">AI Solutions</a></li>
-        <li><a href="#integrations" class="hover:text-blue-500">Integrations</a></li>
-        <li><a href="#about" class="hover:text-blue-500">About</a></li>
-        <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
-      </ul>
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light track */
+}
 
-      <a href="#contact" class="btn hidden md:block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
-        Get Started
-      </a>
-    </div>
-  </nav>
+::-webkit-scrollbar-thumb {
+  background: var(--primary); /* Blue thumb */
+  border-radius: 4px;
+}
 
-  <!-- Hero Section -->
-  <section id="home" class="pt-32 pb-16 bg-white">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-      <div class="md:w-1/2 mb-12 md:mb-0">
-        <div class="mb-4 text-blue-500 font-semibold flex items-center">
-          <i class="fas fa-robot mr-2"></i> Next-Gen AI
-        </div>
-        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-          Transforming Business with <span class="text-blue-600">Intelligent AI</span> Solutions
-        </h1>
-        <p class="text-lg text-gray-600 mb-8">
-          Pinnacle AI delivers cutting-edge artificial intelligence solutions that drive innovation, efficiency, and growth for businesses of all sizes.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#services" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
-            Explore Services <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-          <a href="#contact" class="border border-blue-600 text-blue-600 px-6 py-2 rounded hover:bg-blue-50">
-            Contact Us
-          </a>
-        </div>
-        <div class="mt-6 flex flex-wrap gap-3 text-sm text-gray-500">
-          <span>Machine Learning</span>
-          <span>Neural Networks</span>
-          <span>Computer Vision</span>
-          <span>NLP</span>
-          <span>Data Analytics</span>
-        </div>
-      </div>
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark); /* Darker blue on hover */
+}
 
-      <div class="md:w-1/2 flex justify-center">
-        <img src="https://images.unsplash.com/photo-1677442135136-760c813028c0?q=80&w=2832&auto=format&fit=crop" alt="AI Brain" class="rounded-lg shadow-xl max-w-md" />
-      </div>
-    </div>
-  </section>
+/* Navbar Styles */
+.navbar {
+  /* Tailwind classes handle position, width, z-index, bg, shadow, transition */
+  /* You can adjust padding and background for the scrolled state here */
+}
 
-  <!-- Services Section (example) -->
-  <section id="services" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-6 text-blue-600">Our Services</h2>
-      <p class="text-gray-600 mb-12 max-w-xl mx-auto">
-        We offer a comprehensive suite of AI-powered services designed to help your business thrive in the digital age.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-6 bg-white rounded shadow">
-          <i class="fas fa-mobile-alt text-3xl text-blue-500 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">App Development</h3>
-          <p class="text-gray-500">Custom web & mobile apps integrated with advanced AI.</p>
-        </div>
-        <div class="p-6 bg-white rounded shadow">
-          <i class="fas fa-rocket text-3xl text-blue-500 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">AI Deployment</h3>
-          <p class="text-gray-500">Seamless deployment via AWS, Azure, or containers.</p>
-        </div>
-        <div class="p-6 bg-white rounded shadow">
-          <i class="fas fa-cogs text-3xl text-blue-500 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Automation</h3>
-          <p class="text-gray-500">RPA and workflow automation to optimize efficiency.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+.navbar.scrolled {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  box-shadow: var(--shadow-md);
+}
 
-  <!-- Chatbot -->
-  <div class="fixed bottom-6 right-6 z-50">
-    <div class="bg-white p-4 rounded-lg shadow-xl w-80">
-      <div class="flex justify-between items-center mb-3">
-        <div>
-          <h3 class="font-semibold">AI Assistant</h3>
-          <small class="text-gray-400">Powered by Pinnacle AI</small>
-        </div>
-        <button onclick="this.closest('div').style.display='none'">
-          <i class="fas fa-times text-gray-400"></i>
-        </button>
-      </div>
-      <div class="h-32 overflow-y-auto mb-2 text-sm text-gray-600">
-        Hello! I'm your AI assistant. How can I help you today?
-      </div>
-      <div class="flex">
-        <input type="text" placeholder="Type your message..." class="flex-1 px-2 py-1 border border-gray-300 rounded-l" />
-        <button class="bg-blue-600 text-white px-3 rounded-r">
-          <i class="fas fa-paper-plane"></i>
-        </button>
-      </div>
-    </div>
-  </div>
+/* Preloader Styles */
+.preloader {
+  /* Tailwind classes handle fixed, inset, flex, items, justify, bg, z-index */
+  /* JS toggles opacity via 'fade-out' class */
+}
 
-  <!-- Footer -->
-  <footer class="bg-gray-100 py-8 mt-20 text-center text-gray-600 text-sm">
-    &copy; 2025 Pinnacle AI Solutions. All rights reserved.
-  </footer>
+.preloader .loader {
+  border-top-color: transparent; /* Creates the spinning effect */
+  /* Tailwind classes handle border, rounded, w, h, animate-spin */
+}
 
-  <!-- JavaScript -->
-  <script src="pinnacle-ai-solutions.js"></script>
-</body>
-</html>
+.preloader.fade-out {
+  opacity: 0;
+  pointer-events: none; /* Disable interaction after fading */
+}
+
+/* Sections */
+section {
+    /* Tailwind padding and min-height handled in HTML */
+    /* Ensure scroll-padding-top works correctly in HTML if you adjust padding here */
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Class added by JS when element is visible */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional: Add delays using Tailwind utilities or custom classes if needed */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+
+/* Nav Link Active State (JS adds 'active' class) */
+.nav-link.active {
+    color: var(--primary); /* Example: Blue color for active */
+    font-weight: 600; /* Example: Make it bolder */
+}
+
+/* Mobile Menu (JS toggles 'hidden' class) */
+#mobile-menu {
+    /* Initially hidden by Tailwind's 'hidden md:hidden' */
+    /* When JS removes 'hidden', it will become flex/block */
+    /* Add styles for the visible state if needed, e.g.: */
+    /* display: block; */ /* Or flex, depending on content layout */
+     width: 100%;
+     /* Add padding/margins if not handled by Tailwind in HTML */
+     /* Tailwind classes for bg and shadow in HTML handle appearance */
+}
+
+
+/* Back to Top Button */
+.back-to-top {
+    /* Tailwind classes handle fixed, bottom, right, z-index, bg, text, padding, rounded, shadow, transition */
+    /* JS toggles opacity and pointer-events via 'show' class */
+}
+
+.back-to-top.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Chatbot Toggle & Container */
+.chatbot-toggle {
+     /* Tailwind handles position, bottom, right, z-index, bg, text, padding, rounded, shadow, hover transition */
+}
+
+.chatbot-container {
+     /* Tailwind handles fixed, bottom, right, z-index, w, bg, p, rounded, shadow */
+    /* JS toggles 'hidden' class */
+}
+
+.chatbot-messages {
+     /* Tailwind handles h, overflow-y, mb, text, border-b, pb */
+}
+
+.chatbot-messages .message {
+    margin-bottom: 8px;
+    display: flex;
+    /* Adjust layout based on user/bot */
+}
+
+.chatbot-messages .message.user {
+    justify-content: flex-end; /* User messages on the right */
+}
+
+.chatbot-messages .message.bot {
+    justify-content: flex-start; /* Bot messages on the left */
+}
+
+.chatbot-messages .message-content {
+    max-width: 85%; /* Limit message width */
+    padding: 6px 10px;
+    border-radius: 15px; /* Rounded corners */
+    line-height: 1.4;
+}
+
+.chatbot-messages .message.user .message-content {
+    background-color: var(--primary); /* Example user bubble color */
+    color: white;
+    border-bottom-right-radius: 2px; /* Sharpen bottom corner */
+}
+
+.chatbot-messages .message.bot .message-content {
+    background-color: #e5e7eb; /* Example bot bubble color */
+    color: var(--text-dark);
+    border-bottom-left-radius: 2px; /* Sharpen bottom corner */
+}
+
+/* Typing indicator */
+.chatbot-messages .typing-indicator {
+    background-color: #e5e7eb; /* Same as bot bubble */
+    display: flex;
+    align-items: center;
+}
+
+.chatbot-messages .typing-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #9ca3af; /* Dot color */
+    border-radius: 50%;
+    margin: 0 2px;
+    animation: bounce 1s infinite ease-in-out;
+}
+
+.chatbot-messages .typing-dot:nth-child(1) { animation-delay: 0s; }
+.chatbot-messages .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.chatbot-messages .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-4px); } /* Adjust bounce height */
+}
+
+
+/* Media Queries for Responsiveness */
+/* Tailwind handles many responsive adjustments, but add custom ones here */
+
+@media (max-width: 767px) {
+    /* Styles specific to screens smaller than 768px (Tailwind 'md') */
+    html {
+        scroll-padding-top: 70px; /* Adjust padding for smaller navbar on mobile */
+    }
+    .navbar.scrolled {
+         padding-top: 1rem; /* Maybe revert padding slightly if you want taller mobile nav */
+         padding-bottom: 1rem;
+         box-shadow: none; /* Maybe remove shadow on mobile */
+    }
+
+    /* Ensure mobile menu starts hidden */
+    #mobile-menu:not(.open) { /* Use '.open' class if JS toggles it */
+         display: none; /* Or visibility: hidden; height: 0; overflow: hidden; */
+    }
+
+    /* If using a custom JS class to show mobile menu */
+    #mobile-menu.open {
+        display: block; /* Or height: auto; visibility: visible; */
+    }
+
+    /* Adjust chatbot position for smaller screens if needed */
+    .chatbot-container {
+        bottom: 15px;
+        right: 15px;
+        width: 90%; /* Make it take more width */
+        max-width: 300px; /* But cap its max width */
+    }
+     .chatbot-toggle {
+         bottom: 15px;
+         right: 15px;
+     }
+
+    /* Adjust fade-in animation delay on mobile if needed */
+    .fade-in.delay-100 { transition-delay: 0s; }
+    .fade-in.delay-200 { transition-delay: 0s; }
+    .fade-in.delay-300 { transition-delay: 0s; }
+    .fade-in.delay-400 { transition-delay: 0s; }
+    .fade-in.delay-500 { transition-delay: 0s; }
+
+}
+
+/* Add more media queries for other breakpoints if needed */
+/* @media (min-width: 768px) { ... } */
+/* @media (min-width: 1024px) { ... } */
